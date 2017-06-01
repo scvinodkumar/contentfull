@@ -1,0 +1,11 @@
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <% if(viewPage == 1) { %>
+	<li><a href="/category/<%-category.sys.id %>"><%- category.fields.title %></a></li>  
+	<li><%- products[0].fields.product_title %></li>  
+  <% } else if(viewPage === 0) { %>
+	<li><%- category.fields.title %></li>  
+  <% } else if(viewPage == 2) { %>
+	<li>Search</li>  
+  <% } %>
+</ul>

@@ -3,17 +3,24 @@
 
 <head>
     <title>ContentFull POC Site</title>
-    <% include partials/head.ejs %>	
+    <% include partials/head.ejs %>		
 </head>
 
 <body>
 	<% include partials/menu.ejs %>
 	
-	<% include partials/slider.ejs %>
-
-	<br>
+	<br><br><br>
 	
 	<div class="container">
+		<div class="container-fluid">
+	
+		<% include partials/breadcrumb.ejs %>
+		</div>
+	
+	</div>
+	
+	
+	<div class="container">				
 		<% include partials/message.ejs %>
 		<div class="container-fluid">
 		<% if (products.length) { %>
@@ -25,19 +32,19 @@
 					class="glyphicon glyphicon-th"></span>Grid</a>
 			</div>
 		</div>
-			
-			<div id="products" class="row list-group">
+		
+		
+		<div id="products" class="row list-group">
 			<% for (var i = 0; i < products.length; i++) { %>
-				<div class="item col-xs-4 col-lg-4">
+				<div class="item  col-xs-4 col-lg-4">
 					
 					<div class="thumbnail">
 						<a href="/view/<%= products[i].sys.id %>">
-						<!-- http://placehold.it/400x250/000/fff -->
 						<img class="group list-group-image img-responsive" src="http:<%- products[i].fields.image.fields.file.url %>?w=400&h=250&fit=pad" alt="" />
 						</a>
 						<div class="caption">
 							<a href="/view/<%= products[i].sys.id %>">
-							<h4 class="group inner list-group-item-heading text-capitalize"><%= products[i].fields.product_title.substr(0,50) %></h4>
+							<h4 class="group inner list-group-item-heading text-capitalize"><%= products[i].fields.product_title.substr(0,55) %></h4>
 							</a>
 							<p class="group inner list-group-item-text text-lowercase"><%= products[i].fields.description.substr(0,130) %></p>
 							<div class="row">
@@ -48,21 +55,18 @@
 									<a class="btn btn-success" href="javascript:void();">Add to cart</a>
 								</div>
 							</div>
-						</div>						
+						</div>
 					</div>
 				</div>
-			<% } %>	
-			</div>			
-			<%- pager %>
+			<% } %>
+		</div>
 		<% } else { %>  
 		<div align="center" style="color:red;">No products found</div>
 		<% } %>  
 		</div>
 	</div>
-		
 	
   <% include partials/jsIncludes.ejs %>
-  <script src="/js/slider.js"></script>
 
 </body>
 

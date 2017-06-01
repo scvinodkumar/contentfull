@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ContentFull POC Site</title>
+    <% include partials/head.ejs %>	
+</head>
+
+<body>
+
+<div class="container">
+
+	<% include partials/menu.ejs %>
+	
+	<br><br><br>
+	<div class="container-fluid">
+		
+		<% include partials/message.ejs %>
+		
+		<form class="form-horizontal" name="registration" method="post" action="/register" enctype="multipart/form-data">
+			<fieldset>
+
+			<!-- Form Name -->
+			<legend>Registration</legend>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="username">User name</label>  
+			  <div class="col-md-4">
+			  <input id="username" name="username" type="text" placeholder="user name" class="form-control input-md" required="">
+				
+			  </div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="email">Email</label>  
+			  <div class="col-md-4">
+			  <input id="email" name="email" type="text" placeholder="email" class="form-control input-md" required="">
+				
+			  </div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="firstname">First name</label>  
+			  <div class="col-md-4">
+			  <input id="firstname" name="firstname" type="text" placeholder="first name" class="form-control input-md" required="">
+				
+			  </div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="lastname">Last name</label>  
+			  <div class="col-md-4">
+			  <input id="lastname" name="lastname" type="text" placeholder="last name" class="form-control input-md" required="">
+				
+			  </div>
+			</div>
+
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="pass">Password</label>  
+			  <div class="col-md-4">
+			  <input id="pass" name="pass" type="password" placeholder="password" class="form-control input-md" required="">
+				
+			  </div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="cpass">Confirm Password</label>  
+			  <div class="col-md-4">
+			  <input id="cpass" name="cpass" type="password" placeholder="confirm password" class="form-control input-md" required="">
+				
+			  </div>
+			</div>
+
+
+
+
+
+
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="picture">Profile Picture</label>  
+			  <div class="col-md-4">
+			  <input id="picture" name="picture" type="file" placeholder="profile picture" class="form-control input-md" required="">
+				
+			  </div>
+			</div>
+
+			<!--
+
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="add1">Address 1</label>  
+			  <div class="col-md-4">
+			  <input id="add1" name="add1" type="text" placeholder="" class="form-control input-md" required="">
+				
+			  </div>
+			</div>
+
+
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="add2">Address 2</label>  
+			  <div class="col-md-4">
+			  <input id="add2" name="add2" type="text" placeholder="" class="form-control input-md">
+				
+			  </div>
+			</div>
+
+
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="city">City</label>  
+			  <div class="col-md-4">
+			  <input id="city" name="city" type="text" placeholder="city" class="form-control input-md" required="">
+				
+			  </div>
+			</div>
+
+
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="zip">Zip Code</label>  
+			  <div class="col-md-4">
+			  <input id="zip" name="zip" type="text" placeholder="Zip Code" class="form-control input-md" required="">
+				
+			  </div>
+			</div>
+
+
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="ctry">Country</label>  
+			  <div class="col-md-4">
+			  <input id="ctry" name="ctry" type="text" placeholder="Country" class="form-control input-md" required="">
+				
+			  </div>
+			</div>
+
+
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="phone">Text InputPhone</label>  
+			  <div class="col-md-4">
+			  <input id="phone" name="phone" type="text" placeholder="Phone#" class="form-control input-md" required="">
+				
+			  </div>
+			</div>
+
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>
+			  <div class="col-md-4">
+				<select id="selectbasic" name="selectbasic" class="form-control input-md">
+				  <option>Option one</option>
+				  <option>Option two</option>
+				</select>
+			  </div>
+			</div>
+			-->
+
+			<!-- Multiple Radios (inline) -->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="Gender">Gender</label>
+			  <div class="col-md-4"> 
+				<label class="radio-inline" for="Gender-1">
+				  <input type="radio" name="gender" id="Gender-1" value="Male" checked="checked">Male
+				</label> 
+				<label class="radio-inline" for="Gender-2">
+				  <input type="radio" name="gender" id="Gender-2" value="Female">Female
+				</label>
+			  </div>
+			</div>
+
+
+			<!-- Button -->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="submit"></label>
+			  <div class="col-md-4">
+				<button id="submit" name="submit" class="btn btn-primary">SUBMIT</button>
+			  </div>
+			</div>
+
+			</fieldset>
+		</form>
+	</div>
+</div>
+		
+	
+<% include partials/jsIncludes.ejs %>
+
+</body>
+
+</html>

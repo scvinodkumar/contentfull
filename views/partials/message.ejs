@@ -1,0 +1,6 @@
+<% 
+if( typeof(expressFlash) !== 'undefined') { 
+for (var i = 0; i < expressFlash.length; i++) { 
+%>
+	<div class="alert alert-success"><%- expressFlash[i] %></div>
+<% } } %>

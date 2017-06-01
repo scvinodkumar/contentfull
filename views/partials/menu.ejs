@@ -1,19 +1,35 @@
+<% if (categories.length) { %>
 <div class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-     <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar" ></span>
-          <span class="icon-bar" ></span>
-          <span class="icon-bar" ></span>
-       </button>
-       <a href="/" class="navbar-brand">iLoveMyCity!</a>
-    </div>
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-		<% for (var i = 0; i < category.length; i++) { %>		
-          <li><a href="/<%- category[i].sys.id %>"><%= category[i].fields.title %></a></li>
-		<% } %>          
-        </ul>
-    </div>
- </div>
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			  <span class="icon-bar" ></span>
+			  <span class="icon-bar" ></span>
+			  <span class="icon-bar" ></span>
+			</button>
+			<a href="/" class="navbar-brand"><img width="157" height="32" src="/images/contentful-dark-1a51a42b.svg"></a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+			<% for (var i = 0; i < categories.length; i++) { %>		
+				<% 
+					var activeClass = '';
+					if(viewPage == 1 && (typeof(category) !== 'undefined' && category.sys.id == categories[i].sys.id)) { 
+						var activeClass = 'class="active"';
+					}				
+				%>
+				<li <%- activeClass %>><a href="/category/<%- categories[i].sys.id %>"><%= categories[i].fields.title %></a></li>
+			<% } %>
+				<li <% if(viewPage == 2) { %> class="active" <% } %>><a href="/search">Search</a></li>
+				<li <% if(viewPage == 3) { %> class="active" <% } %>><a href="/register">Register</a></li>				
+				<% if (typeof(usersActive.facebook) !== 'undefined') { %>
+				<li><a href="/profile" title="click to view profile page">Welcome <%= usersActive.facebook.name %></a></li>
+				<li><a href="/logout">Logout</a></li>
+				<% } else { %>
+				<li <% if(viewPage == 4) { %> class="active" <% } %>><a href="/login">Login</a></li>
+				<% } %>
+			</ul>
+		</div>
+	</div>
 </div>
+<% } %>
